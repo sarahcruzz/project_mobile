@@ -1,44 +1,24 @@
-import { StyleSheet, View, FlatList } from "react-native"
+import { StyleSheet, Text, View, FlatList } from "react-native"
 import { Usuario } from "./Usuario"
 
-export function Lista(){
-
-    const listaUsuarios =[
-        {
-            codigo: '1',
-            nome: 'João',
-            email: 'joao@gmail.com',
-            telefone: '(19) 98769-7975'
-        },
-
-        {
-            codigo: '2',
-            nome: 'Maria',
-            email: 'maria@gmail.com',
-            telefone: '(19) 98300-6547'
-        },
-
-        {
-            codigo: '3',
-            nome: 'Carlos',
-            email: 'carlos@gmail.com',
-            telefone: '(19) 99550-6767'
-        }
-
-    ]
+export function Lista({colecao, remover}){
 
     return(
         <View>
             <FlatList
-                data={listaUsuarios}
-                keyExtractor={ (item) => {item.codigo} }
+                data={colecao}
+                keyExtractor={ item => item.codigo }
                 renderItem={ ({item}) => (
                     <Usuario 
                         nome={item.nome}
                         email={item.email}
                         telefone={item.telefone}
+                        remover={() => remover(item.codigo)}
                     />
                 ) }
+                ListEmptyComponent={() => (
+                    <Text style={estilos.texto}>Nenhum usuário cadastrado</Text>
+                )}
             />
         </View>
     )
@@ -47,6 +27,7 @@ export function Lista(){
 const estilos = StyleSheet.create({
     texto: {
         color: '#fff',
-        paddingTop: 24
+        paddingTop: 24, 
+        textAlign: 'center'
     }
 })

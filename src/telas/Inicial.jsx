@@ -5,10 +5,10 @@ import { Botao } from "../componentes/Botao"
 export function Inicial(){
     return(
         <View style={estilos.conteiner}>
-           <Cabecalho/>
-           <Botao texto="Usuario"/>
-           <Botao texto="Usuario"/>
-           <Botao texto="Usuario"/>
+           <Cabecalho titulo="Localizador" subtitulo="2DS-TB" />
+           <Botao texto="Usuario (0)"/>
+           <Botao texto="Sensores (0)"/>
+           <Botao texto="Sobre (0)"/>
         </View>
     )
 }

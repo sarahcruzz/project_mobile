@@ -10,7 +10,7 @@ export const Botao = props => {
 
 const estilos = StyleSheet.create({
     conteiner:{
-        backgroundColor: '#6a040f',
+        backgroundColor: '#5900d2',
         alignItems: 'center',
         justifyContent: 'center',
         height: 50,
@@ -18,7 +18,6 @@ const estilos = StyleSheet.create({
         marginTop: 24,
         marginStart: 24,
         borderRadius: 12,
-        borderColor: '#dc2f02',
         borderWidth: 1
     },
     
